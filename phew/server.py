@@ -62,7 +62,9 @@ data: {self.data}"""
 
 
 class Response:
-  def __init__(self, body, status=200, headers={}):
+  def __init__(self, body, status=200, headers=None):
+    if headers is None:
+      headers = {}
     self.status = status
     self.headers = headers
     self.body = body
